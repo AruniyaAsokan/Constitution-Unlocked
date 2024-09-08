@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Main Game Container (First Page) -->
+  <div id="constitution-unlocked" class="page">
+    <div class="container">
+      <h1 class="breathing-text">Constitution<br>Unlocked</h1>
+      <button id="start-button" class="start-button" onclick="startGame()">Play Game</button>
+    </div>
+  </div>
+
+  <!-- Story Selection Page -->
+  <div id="story-selection" class="hidden page">
+    <h1>You are Arya, a general citizen of your country, India</h1>
+    <h2>Select a story to continue:</h2>
+    <button class="story-button" onclick="selectStory(1)">Story 1</button>
+    <button class="story-button" onclick="selectStory(2)">Story 2</button>
+    <button class="story-button" onclick="selectStory(3)">Story 3</button>
+  </div>
+
+  <!-- Video Section (Initially Hidden) -->
+  <div id="video-section" class="hidden page">
+    <video id="story-video" muted>
+      <source src="./assets/story2.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Chapter 2 Intro Page -->
+  <div id="chapter-2-intro" class="hidden page">
+    <div class="chapter-title">
+      <h1>Chapter 2: The Medical Crisis</h1>
+    </div>
+    <button class="proceed-button" onclick="showScenario()">Proceed</button>
+  </div>
+
+  <!-- Scenario Page -->
+  <div id="scenario-page" class="hidden page">
+    <h2>Arya's friend is in an accident!</h2>
+    <p>The hospital refuses treatment until payment is made.</p>
+    <button class="action-button" onclick="showOptions()">What will you do?</button>
+  </div>
+
+  <!-- Decision Options -->
+  <div id="decision-options" class="hidden page">
+    <p>The hospital refuses treatment until payment is made. What should Arya do?</p>
+    <button class="decision-button" onclick="chooseConfront()">Confront the hospital staff</button>
+    <button class="decision-button" onclick="chooseElsewhere()">Search for help elsewhere</button>
+  </div>
+
+
+   <!-- Argument Selection -->
+<div id="argument-selection" class="hidden page">
+  <h2>Select 5 arguments to present</h2>
+  <form id="argument-form" class="argument-grid">
+    <div class="argument-box">
+      <input type="checkbox" id="arg1" value="The hospital has the best emergency services available.">
+      <label for="arg1">The hospital has the best emergency services available.</label>
+    </div>
+    <div class="argument-box">
+      <input type="checkbox" id="arg2" value="The hospital’s policy is efficient and ensures high standards of care.">
+      <label for="arg2">The hospital’s policy is efficient and ensures high standards of care.</label>
+    </div>
+    <div class="argument-box">
+      <input type="checkbox" id="arg3" value="According to Article 21 of the Constitution, my friend has the right to life and medical care!">
+      <label for="arg3">According to Article 21 of the Constitution, my friend has the right to life and medical care!</label>
+    </div>
+    <div class="argument-box">
+      <input type="checkbox" id="arg4" value="Under the Supreme Court’s directives, hospitals are required to provide emergency treatment irrespective of payment, as per public interest litigation outcomes.">
+      <label for="arg4">Under the Supreme Court’s directives, hospitals are required to provide emergency treatment irrespective of payment, as per public interest litigation outcomes.</label>
+    </div>
+    <div class="argument-box">
+      <input type="checkbox" id="arg5" value="The hospital’s policy is inconsistent with the legal obligations outlined under the Indian Constitution, which mandates emergency care for all citizens.">
+      <label for="arg5">The hospital’s policy is inconsistent with the legal obligations outlined under the Indian Constitution, which mandates emergency care for all citizens.</label>
+    </div>
+    <div class="argument-box">
+      <input type="checkbox" id="arg6" value="Article 14 of the Constitution guarantees equality before the law and equal protection of the laws. My friend is entitled to equal treatment, regardless of payment issues.">
+      <label for="arg6">Article 14 of the Constitution guarantees equality before the law and equal protection of the laws. My friend is entitled to equal treatment, regardless of payment issues.</label>
+    </div>
+    <div class="argument-box">
+      <input type="checkbox" id="arg7" value="Under Article 47, the State is responsible for improving public health. Hospitals, as part of the healthcare system, must provide emergency services in line with this duty.">
+      <label for="arg7">Under Article 47, the State is responsible for improving public health. Hospitals, as part of the healthcare system, must provide emergency services in line with this duty.</label>
+    </div>
+  </form>
+  <button class="action-button" onclick="submitArguments()">Submit Arguments</button>
+</div>
+
+  <!-- Outcome Section -->
+  <div id="outcome" class="hidden page">
+    <p id="outcome-message"></p>
+    <button class="retry-button" onclick="resetGame()">Next</button>
+  </div>
+  <!-- Game Script -->
+  <script src="game.js"></script>
+</body>
+</html>
