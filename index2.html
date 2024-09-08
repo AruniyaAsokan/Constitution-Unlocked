@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoplay Background Video</title>
+    <style>
+        /* Make the video cover the background */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Video container */
+        .video-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;  /* Set video width */
+            height: auto;  /* Maintain aspect ratio */
+        }
+
+        /* Full-screen video styling */
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the video covers the entire container */
+        }
+
+        /* Button styling */
+        .button-78 {
+            align-items: center;
+            appearance: none;
+            background-clip: padding-box;
+            background-color: initial;
+            background-image: none;
+            border-style: none;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            flex-direction: row;
+            flex-shrink: 0;
+            font-family: Eina01, sans-serif;
+            font-size: 26px; /* Increased font size */
+            font-weight: 800;
+            justify-content: center;
+            line-height: 24px;
+            margin: 0;
+            min-height: 74px; /* Increased height */
+            outline: none;
+            overflow: visible;
+            padding: 19px 35px; /* Increased padding */
+            pointer-events: auto;
+            position: absolute;
+            text-align: center;
+            text-decoration: none;
+            text-transform: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            width: auto;
+            word-break: keep-all;
+            z-index: 1; /* Ensure button is on top of video */
+            display: none; /* Initially hide the button */
+            bottom: 50px; /* Position 50px from the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center the button */
+        }
+
+        @media (min-width: 768px) {
+            .button-78 {
+                padding: 19px 32px;
+            }
+        }
+
+        .button-78:before,
+        .button-78:after {
+            border-radius: 80px;
+        }
+
+        .button-78:before {
+            background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+            content: "";
+            display: block;
+            height: 100%;
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -2;
+        }
+
+        .button-78:after {
+            background-color: initial;
+            background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+            bottom: 4px;
+            content: "";
+            display: block;
+            left: 4px;
+            overflow: hidden;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            transition: all 100ms ease-out;
+            z-index: -1;
+        }
+
+        .button-78:hover:not(:disabled):before {
+            background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);
+        }
+
+        .button-78:hover:not(:disabled):after {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            transition-timing-function: ease-in;
+            opacity: 0;
+        }
+
+        .button-78:active:not(:disabled) {
+            color: #ccc;
+        }
+
+        .button-78:active:not(:disabled):before {
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+        }
+
+        .button-78:active:not(:disabled):after {
+            background-image: linear-gradient(#4d8aed 0, #6bfcfc 100%);
+            bottom: 4px;
+            left: 4px;
+            right: 4px;
+            top: 4px;
+        }
+
+        .button-78:disabled {
+            cursor: default;
+            opacity: .24;
+        }
+    </style>
+</head>
+<body  style="background-color: rgb(130, 211, 255);">
+
+    <div class="video-container" style="border: black solid 0.5rem;">
+        <!-- Video Element -->
+        <video id="myVideo" autoplay muted playsinline>
+            <source src="chap2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Button Element -->
+        <button class="button-78" role="button" >Start quiz</button>
+    </div>
+
+    <script>
+        // JavaScript to handle video playback and button display
+        const video = document.getElementById('myVideo');
+        const button = document.querySelector('.button-78');
+
+        // When the video ends, show the button
+        video.addEventListener('ended', () => {
+            button.style.display = 'block'; // Show the button after the video ends
+        });
+
+        // Add click event listener to the button
+        button.addEventListener('click', () => {
+            window.location.href = 'index3.html'; // Redirect to another page when the button is clicked
+        });
+    </script>
+
+</body>
+</html>

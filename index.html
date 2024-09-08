@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Description's meta -->
+    <meta name="description" content="JavaScript Quiz game is the funniest way to test your knowledge about the most famous front-end language in the world!">
+    <meta name="keywords" content="Cinthia Fontoura, javascript quiz, quiz, JavaScript, HTML, CSS, JS, Dublin, Ireland">
+    <meta name="author" content="Cinthia Fontoura">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <title>JavaScript Quiz</title>
+</head>
+<body>
+    <!-- Background image -->
+    <div id="background-image"></div>
+
+    <header>
+        <!-- You can include navigation or other header content here -->
+    </header>
+
+    <main>
+        <!-- Main content -->
+        
+            <!-- Start button -->
+            <div id="start">
+                <h2>Are you ready?</h2>
+                <button class="btn btn--full" id="start-game">Start</button>
+            </div>
+<div class="quiz__box">
+            <!-- Quiz game structure to be manipulated by JavaScript -->
+            <div id="quiz">
+                <div class="quiz__header">
+                    <div>
+                        <p id="progress" class="quiz__progress">
+                            Question 
+                            <span id="question_number">1</span> 
+                            of 
+                            <span id="total_question">1</span>
+                        </p>
+                        <div class="progress__bar">
+                            <div id="progress__bar--full"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="quiz__score">
+                            Score
+                        </p>
+                        <p class="score__points" id="score_points">
+                            0
+                        </p>
+                    </div>
+                </div>
+                <h2 id="quiz__question" class="quiz__question">Am I a question?</h2>
+                <div class="quiz__options">
+                    <button class="btn quiz__option" id="a">
+                        a. <span id="a__option">Option A</span>
+                    </button>
+                    <button class="btn quiz__option" id="b">
+                        b. <span id="b__option">Option B</span>
+                    </button>
+                    <button class="btn quiz__option" id="c">
+                        c. <span id="c__option">Option C</span>
+                    </button>
+                    <button class="btn quiz__option" id="d">
+                        d. <span id="d__option">Option D</span>
+                    </button>
+                </div>
+                <div class="quiz__footer">
+                    <p class="quiz__result">Correct answers: <span id="right-answer">0</span></p>
+                    <p class="quiz__result">Incorrect answers: <span id="wrong-answer">0</span></p>
+                </div>
+            </div>
+
+            <!-- Ranking -->
+            <div class="ranking-box" id="ranking-box">
+                <h2 id="ranking-title"><!-- Value added by JavaScript --></h2>
+                <p id="ranking-score"><!-- Value added by JavaScript --></p>
+                <h3>Latest Scores</h3>
+                <ul class="ranking-list" id="ranking-list">
+                </ul>
+                <button id="play-again-friend" class="btn btn--full">New player</button>
+                <button id="play-again" class="btn btn--full">Play again</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Credits -->
+    <footer>
+        <!-- Include footer content here -->
+    </footer>
+
+    <!-- JS scripts -->
+    <script src="assets/js/script.js"></script>
+    
+</body>
+</html>
+

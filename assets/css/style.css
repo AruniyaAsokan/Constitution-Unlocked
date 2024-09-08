@@ -1,0 +1,289 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+/* General configuration */
+:root {
+  /* Colors variables*/
+  --color__background: #f5f5f5; /* Light background */
+  --color__saffron: #FF9933;    /* Saffron */
+  --color__white: rgba(255, 255, 255, 0.5); /* More transparent white */
+  --color__green: #138808;      /* Green */
+  --color__dark: #1d1d1d;       /* Dark text color */
+  --color__primary: #138808;    /* Primary color */
+  --color__primary--transparent: #1388081a; /* More transparent green */
+  
+  /* Fonts variables*/
+  --font__family: 'Source Code Pro', monospace;
+}
+
+/* Background image */
+/* Background image */
+/* Background image */
+#background-image {
+  position: fixed; /* Fixed position to cover entire viewport */
+  top: 0;
+  left: 0;
+  background-image: url("bg.jpg");
+  width: 100vw; /* Full width of viewport */
+  height: 100vh; /* Full height of viewport */
+  z-index: -1; /* Place it behind other content */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color__background);
+  color: var(--color__dark);
+  font-family: var(--font__family);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  font-size: 20px;
+  line-height: 1.5;  
+}
+
+h1 {
+  color: var(--color__saffron);
+  font-size: 50px;
+  font-weight: 700;
+  padding: 20px 0;
+  text-align: center;
+}
+
+@media only screen and (max-width: 464px) {
+  h1 {
+    font-size: 33px;    
+  }  
+}
+
+/* Buttons */
+.btn {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 20px;
+  margin: 5px 0;
+  padding: 10px 14px;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1.5px solid var(--color__primary);  
+  background-color: rgba(255, 255, 255, 0.5); /* More transparent white */
+  overflow-wrap: break-word;
+}
+
+.btn:hover {
+  background-color: var(--color__primary--transparent);  
+}
+
+.btn:active,
+.btn--full {
+  background-color: var(--color__primary);
+  color: var(--color__white);
+}
+
+.btn--full:hover {
+  background-color: var(--color__white);
+  border: 1.5px solid var(--color__primary);
+  color: var(--color__primary);
+  font-weight: 600;
+} 
+
+/* Start box */
+input {
+  border: 1.5px solid var(--color__primary);
+  background-color: rgba(255, 255, 255, 0.5); /* More transparent white */
+  border-radius: 4px;
+  font-family: var(--font__family);
+  font-size: 20px;
+  padding: 8px 10px;
+  margin: 15px 0;
+  line-height: 1.5;
+  width: 80%;
+}
+
+input[type="text"]:focus,
+input[type="text"]:hover {
+  background-color: var(--color__primary--transparent);
+  border: 1.5px solid var(--color__primary);
+  outline: 2px solid var(--color__primary);
+}
+#start {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 0 10px;  
+  overflow: hidden;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Quiz game box */
+.quiz__box {
+  width: 900px;
+ /* More transparent white */
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 0 10px;  
+  overflow: hidden;
+  text-align: center;
+  background-image: url("jail.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+@media only screen and (max-width: 950px) {
+  .quiz__box {
+    width: 95vw;    
+  }  
+}
+
+.quiz__header {
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quiz__progress {
+  padding: 5px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.progress__bar {
+  width: 170px;
+  height: 25px;
+  border: 2px solid var(--color__primary);
+  margin: 10px 0;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.quiz__score {
+  text-align: center;
+  font-size: 20px;
+}
+
+.score__points {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 500;
+  color: var(--color__primary);
+}
+
+.quiz__question {
+  font-size: 25px;
+  padding: 15px 0;
+  text-align: left;
+}
+
+.quiz__options {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.quiz__footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.quiz__result {
+  width: 250px;
+  font-size: 18px;
+  text-align: left;
+  padding: 5px 0;
+}
+
+/* Ranking */
+.ranking-box p {
+  font-size: 24px;
+  margin: 25px 0;
+}
+
+.ranking-box h3 {
+  background: var(--color__primary--transparent);
+  border-radius: 4px 4px 0 0;
+  font-size: 26px;
+  padding: 15px 0;
+  margin: 10px auto 0;
+  max-width: 300px;
+}
+
+.ranking-list {
+  background: var(--color__primary--transparent);
+  border-radius: 0 0 4px 4px;
+  padding: 10px;
+  margin: 0 auto 10px;
+  max-width: 300px;
+}
+
+.ranking-list li {
+  border-bottom: 1.5px solid var(--color__primary);
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  text-transform: lowercase;
+}
+
+.ranking-list li:last-child {
+  border-bottom: none;
+}
+
+/* Footer */
+.credit {
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 16px;
+}
+
+.credit a {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color__primary);
+  text-decoration: none;
+}
+
+/* Style manipulated by JavaScript */
+#quiz {
+  display: none;
+}
+
+#ranking-box {
+  display: none;
+}
+
+.message {
+  color: red;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#progress__bar--full {
+  border-radius: 50px 0 0 50px;
+  height: 100%;
+  background: var(--color__primary);
+  width: 0%;
+}
